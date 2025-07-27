@@ -1,0 +1,14 @@
+[package]
+name = "hydrocarbon"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+itertools = "0.14.0"
+mimalloc = "0.1.43"
+rustc-hash = "2.1.0"
