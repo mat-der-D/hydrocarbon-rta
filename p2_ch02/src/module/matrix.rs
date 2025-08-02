@@ -98,9 +98,9 @@ impl<const N: usize> AdjacencyTwoBitsMatrix<N> {
 
     pub fn degree_of(&self, idx: usize) -> u32 {
         let row = self.rows[idx];
-        let odd_bits = row & 0x5555_5555; // 0b0101...0101
-        let even_bits = row & 0xaaaa_aaaa; // 0b1010...1010
-        odd_bits.count_ones() + 2 * even_bits.count_ones()
+        let even_bits = row & 0x5555_5555; // 0b0101...0101
+        let odd_bits = row & 0xaaaa_aaaa; // 0b1010...1010
+        even_bits.count_ones() + 2 * odd_bits.count_ones()
     }
 }
 
